@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <p>Background Color: <span class="color"></span></p>
+        <button id="btn">Click me</button>
+    </div>
+    <script>
+       const colors = ["Red", "blue",'green']
+        var color = document.querySelector('.color')
+        var btn = document.getElementById('btn')
+
+        let currentIndex = 0;
+
+        btn.addEventListener('click',function() {
+            const randomNum = random()
+            // document.body.style.background = colors[randomNum]
+            // color.textContent = colors[randomNum]
+            document.body.style.background = colors[currentIndex];
+            color.textContent = colors[currentIndex];
+            currentIndex = (currentIndex + 1) % colors.length;
+
+
+        })
+        function random(){            
+            return Math.floor(Math.random()*colors.length)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+/* Container for buttons */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .btn:hover {
+    background-color: #555;
+  }
+  
+  /* Container for the cards */
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Card styling */
+  .card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+  }
+  /* Basic card styling */
+.card {
+    opacity: 0;     /* Initially invisible */
+    transform: translateY(-20px);  /* Start slightly above */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for fade and slide-in */
+  }
+  
+  /* Fade-in and slide-in effect when cards become visible */
+  .card.visible {
+    display: block;        /* Make the card visible */
+    opacity: 1;            /* Fade in the card */
+    transform: translateY(0);  /* Slide it to its normal position */
+  }
+  
+  /* Heading style */
+  .heading {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  

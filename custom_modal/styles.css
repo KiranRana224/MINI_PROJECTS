@@ -1,0 +1,82 @@
+/* Button style */
+.btn {
+    background: black;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Cancel button */
+.cancel_btn {
+    background-color: gainsboro;
+    color: #aaaaaa;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+/* Modal background (Card) */
+.card {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+
+/* Modal content */
+.content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(-30px); /* Start slightly above */
+    animation: fadeIn 0.3s ease .3s forwards, slideIn 0.3s ease .3s forwards;
+}
+
+/* Modal header style */
+.mHeading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 2px solid;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-30px); /* Start from above */
+    }
+    100% {
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+/* To trigger modal visibility */
+.card.show {
+    display: block; /* Make modal visible when 'show' class is added */
+}

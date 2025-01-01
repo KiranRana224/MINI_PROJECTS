@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="card">
+				<div class="user"></div>
+				<div class="info"></div>
+				<div>
+					<button class="prev">prev</button>
+					<button class="next">next</button>
+				</div>
+			</div>
+		</div>
+		<script>
+			const users = [
+				{
+					user: 0,
+					info: "jjgkfkhjgkhjkgjhkgjhkgkh",
+				},
+				{
+					user: 1,
+					info: "dfgfdg",
+				},
+				{
+					user: 2,
+					info: "fbhghfdghfdh",
+				},
+			];
+			const user = document.querySelector(".user");
+			const info = document.querySelector(".info");
+			const prev = document.querySelector(".prev");
+			const next = document.querySelector(".next");
+
+			let currentIndex = 0;
+			user.textContent = users[currentIndex].user;
+			info.textContent = users[currentIndex].info;
+
+			// Event listeners for buttons
+			prev.addEventListener("click", () => {
+				currentIndex--;
+				if (currentIndex < 0) {
+					currentIndex = users.length - 1; // Wrap around to the last user
+				}
+				showuser(currentIndex);
+			});
+
+			next.addEventListener("click", () => {
+				currentIndex++;
+				if (currentIndex >= users.length) {
+					currentIndex = 0; // Wrap around to the first user
+				}
+				showuser(currentIndex);
+			});
+
+			// Function to display user information
+			function showuser(index) {
+				user.textContent = users[index].user;
+				info.textContent = users[index].info;
+			}
+		</script>
+	</body>
+</html>
